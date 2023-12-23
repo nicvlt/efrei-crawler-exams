@@ -48,6 +48,25 @@ def is_between(name: str, first_student: str, last_student: str) -> bool:
     )
 
 
+def filtering_row_by_year(df: pd.DataFrame, year: str) -> bool:
+    """Filter rows by year
+
+    Args:
+        df (pd.DataFrame): dataframe
+        year (str): year. Ex: L1, L2, L3, M1, M2
+
+    Returns:
+        bool: True if the year is in the row
+    """
+    year_col: str = df["liste des pgm"]
+    year_col = year_col.split(" ")
+
+    for word in year_col:
+        if word == year:
+            return True
+    return False
+
+
 def filter_row_by_name(df: pd.DataFrame, lastname: str) -> bool:
     """Filter rows by lastname
 
