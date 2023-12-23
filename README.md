@@ -4,7 +4,7 @@ EFREI Crawler Exams is a Python application designed to streamline the process o
 
 ## Purpose
 
-This project aims to automate the extraction of student-specific data, providing insights into the classrooms a student is enrolled in and comprehensive information about their exams. The application simplifies the task of navigating through the website and downloading the necessary Excel sheets, making it efficient and user-friendly.
+This project aims to automate the extraction of student-specific schedule data, providing insights into the classrooms, schedule, date and subject information about their exams. The application simplifies the task of navigating through the website and downloading the necessary Excel sheets, making it efficient and user-friendly.
 
 ## Installation & Use
 
