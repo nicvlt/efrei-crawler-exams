@@ -1,6 +1,6 @@
 import pandas as pd
 
-from .constants import ALL_CLASSES
+from .constants import ALL_YEARS
 
 
 def concat_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
@@ -25,7 +25,7 @@ def check_class(class_name: str) -> bool:
     Returns:
         bool: True if the class exists, False otherwise
     """
-    return class_name in ALL_CLASSES
+    return class_name in ALL_YEARS
 
 
 def is_between(name: str, first_student: str, last_student: str) -> bool:
