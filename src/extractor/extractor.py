@@ -3,7 +3,12 @@ import os
 from dotenv import load_dotenv
 
 from ..navigator.navigator import Navigator
-from .utils.functions import concat_dataframes, check_class, filter_row_by_name
+from .utils.functions import (
+    concat_dataframes,
+    check_class,
+    filtering_row_by_year,
+    filter_row_by_name,
+)
 from .utils.constants import ALL_CLASSES, USEFUL_COLUMNS
 
 load_dotenv()
@@ -32,15 +37,14 @@ class Extractor:
                 df = concat_dataframes(df, pd.read_excel(file.path))
 
         print("Classes available:", ALL_CLASSES)
-        user_class: str = None
-        while not check_class(user_class):
-            user_class = input("Class: ")
+        user_year: str = None
+        while not check_class(user_year):
+            user_year = input("Class: ")
 
         # TODO: Fix to containing (careful with L1 and L1INT)
-        df = df[df["liste des pgm"] == user_class]
+        df = df[df.apply(lambda row: filtering_row_by_year(row, user_year), axis=1)]
         df = df.loc[:, USEFUL_COLUMNS]
 
-        # use filter_row_by_name to filter rows on dataframe
         if self.lastname:
             return df[
                 df.apply(lambda row: filter_row_by_name(row, self.lastname), axis=1)
