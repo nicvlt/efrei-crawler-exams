@@ -8,7 +8,7 @@ This project aims to automate the extraction of student-specific data, providing
 
 ## Installation & Use
 
-Follow these steps to set up and run the Efrei Crawler Exams application:
+Follow these steps to set up and run the EFREI Crawler Exams application:
 ```
 git clone https://github.com/nicvlt/efrei-crawler-exams
 pip install -r requirements.txt
