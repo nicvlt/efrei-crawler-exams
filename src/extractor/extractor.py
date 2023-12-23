@@ -19,14 +19,14 @@ class Extractor:
         """Extractor class constructor
 
         Args:
-            lastname (str): student's lastname. Defaults to None.
+            lastname (str, optional): student's lastname. Defaults to None.
         """
 
         self.lastname = lastname
         self.navigator = Navigator()
 
     def extract_info(self):
-        """Extract student's information from the website"""
+        """Extract student's information"""
 
         if not os.listdir("tmp"):
             self.navigator.run(os.getenv("MOODLE_ID"), os.getenv("MOODLE_PASSWORD"))
@@ -41,7 +41,6 @@ class Extractor:
         while not check_class(user_year):
             user_year = input("Class: ")
 
-        # TODO: Fix to containing (careful with L1 and L1INT)
         df = df[df.apply(lambda row: filtering_row_by_year(row, user_year), axis=1)]
         df = df.loc[:, USEFUL_COLUMNS]
 
