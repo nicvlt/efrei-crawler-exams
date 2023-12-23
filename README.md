@@ -27,3 +27,4 @@ MOODLE_PASSWORD = "xxx-xxx"
 - Custom Exceptions raising.
 - In [extractor.py](src/extractor/extractor.py), fix class checking to containing (careful with L1 and L1INT) as EFREI adds some extra information in the field.
 - Beautify the output
+- [tmp](tmp) folder management
