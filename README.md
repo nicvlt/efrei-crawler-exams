@@ -21,3 +21,9 @@ Create a `.env` file in the root folder as follows:
 MOODLE_ID = "xxx-xxx"
 MOODLE_PASSWORD = "xxx-xxx"
 ```
+
+## Features to add
+
+- Custom Exceptions raising.
+- Check if `lastname` is alpha-numeric (in case someone uses `é`, `è`, `ê`, `â`, etc).
+- In [extractor.py](src/extractor/extractor.py), fix class checking to containing (careful with L1 and L1INT) as EFREI adds some extra information in the field.
