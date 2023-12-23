@@ -9,7 +9,7 @@ from .utils.functions import (
     filtering_row_by_year,
     filter_row_by_name,
 )
-from .utils.constants import ALL_CLASSES, USEFUL_COLUMNS
+from .utils.constants import ALL_YEARS, USEFUL_COLUMNS
 
 load_dotenv()
 
@@ -36,10 +36,10 @@ class Extractor:
             for file in files:
                 df = concat_dataframes(df, pd.read_excel(file.path))
 
-        print("Classes available:", ALL_CLASSES)
+        print("\n\nYears available:", ALL_YEARS)
         user_year: str = None
         while not check_class(user_year):
-            user_year = input("Class: ")
+            user_year = input("Enter your year: ")
 
         df = df[df.apply(lambda row: filtering_row_by_year(row, user_year), axis=1)]
         df = df.loc[:, USEFUL_COLUMNS]
