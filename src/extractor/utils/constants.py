@@ -1,4 +1,4 @@
-ALL_CLASSES = [
+ALL_YEARS = [
     "L1",
     "L1INT",
     "L1BDX",
